@@ -3,7 +3,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <Box sx={{backgroundColor:"#196597", py:2}}>
+    <Box sx={{backgroundColor:"primary.main", py:2}}>
         <Container maxWidth="md" sx={{}} >
             <Stack display="flex" flexDirection="column" alignItems={"center"} justifyContent={"center"} spacing={1} >
 
