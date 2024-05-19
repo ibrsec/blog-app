@@ -9,21 +9,25 @@ import Container from "@mui/material/Container";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
-import MenuItem from "@mui/material/MenuItem"; 
+import MenuItem from "@mui/material/MenuItem";
 import { useState } from "react";
-import logo from "../assets/bloglogo.png"; 
+import logo from "../assets/bloglogo.png";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import useAuthApis from "../hooks/useAuthApis";
 
 const pages = ["Dashboard", "New Blog", "About"];
 
 const Navbar = () => {
-    
-    const currentUser = false;
-    
-    const settings = currentUser ? ["My Blog","Profile", "Logout"] : ["Login"];
-    
+  const currentUser = useSelector(state=> state.auth?.user);
 
+  const currentUserToken = useSelector(state=> state.auth?.token); 
 
+  console.log('currentUser',currentUser); 
+
+  const settings = currentUserToken ? ["My Blog", "Profile", "Logout"] : ["Login","Register"];
+
+  const {logoutApi} = useAuthApis();
 
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
@@ -46,7 +50,7 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar position="static" >
+    <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Avatar
@@ -84,15 +88,15 @@ const Navbar = () => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={() => {
-                    handleCloseNavMenu(); 
-                    const path = page.replaceAll(" ","").toLowerCase();
+                <MenuItem
+                  key={page}
+                  onClick={() => {
+                    handleCloseNavMenu();
+                    const path = page.replaceAll(" ", "").toLowerCase();
                     console.log(path);
-                    path === 'dashboard'?
-                    navigate("/")
-                    :
-                    navigate(path);
-                  }}>
+                    path === "dashboard" ? navigate("/") : navigate(path);
+                  }}
+                >
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
               ))}
@@ -124,13 +128,10 @@ const Navbar = () => {
               <Button
                 key={page}
                 onClick={() => {
-                  handleCloseNavMenu(); 
-                  const path = page.replaceAll(" ","").toLowerCase();
+                  handleCloseNavMenu();
+                  const path = page.replaceAll(" ", "").toLowerCase();
                   console.log(path);
-                  path === 'dashboard'?
-                  navigate("/")
-                  :
-                  navigate(path);
+                  path === "dashboard" ? navigate("/") : navigate(path);
                 }}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
@@ -142,7 +143,7 @@ const Navbar = () => {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                <Avatar alt={currentUser?.user?.username} src={currentUser?.image  } />
               </IconButton>
             </Tooltip>
             <Menu
@@ -162,7 +163,24 @@ const Navbar = () => {
               onClose={handleCloseUserMenu}
             >
               {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                <MenuItem
+                  key={setting}
+                  onClick={() => {
+                    handleCloseUserMenu();
+                    const path = setting.replaceAll(" ","").toLowerCase();
+                  console.log(path);
+
+
+                  if(path === "logout")  {
+                    logoutApi()
+                  }else{
+                    navigate(path);
+                  }
+
+                  
+                
+                  }}
+                >
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}

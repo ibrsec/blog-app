@@ -1,7 +1,9 @@
 import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 import AppRouter from "./router/AppRouter";
 import { Provider } from "react-redux";
-import { store } from "./app/store";
+import { persistor, store } from "./app/store";
+import { ToastContainer } from "react-toastify";
+import { PersistGate } from "redux-persist/integration/react";
 
  
 function App() {
@@ -35,13 +37,17 @@ theme.typography.h5 = {
   return (
     <>
     <Provider store={store}>
+      <PersistGate persistor={persistor}>
+
     <ThemeProvider theme={theme}>
 
 
     <CssBaseline />
     <AppRouter />
     </ThemeProvider>
+      </PersistGate>
     </Provider>
+    <ToastContainer />
     </>
   );
 }

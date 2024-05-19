@@ -28,3 +28,25 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+
+
+
+//* logindesin -> tamam
+//* login page e formigi uygula sonra submite login bas
+//*  loginSlice
+//*  sonra regsiter var
+//*  registere'a ayri path yapacazmi
+//* logine ve loginden navigateler yani privateRouter
+//*  private router
+// *loginsiz login page yonlenince => notify gosterme.
+//* redux persist
+// new blog content //*  route private
+// read more content, comments, kendi yazisi ise edit delete buttonlari //* route private
+//fav content //* route private 
+//profile after login route private content
+//myblog after login route private content
+//profile after login route private content
+// * profile card resmi
+//about kismi
+//logout olunca blog infolar silinecek
+//login ken login ve register endpointine gitmeyi engelleme
