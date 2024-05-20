@@ -55,7 +55,8 @@ const Navbar = () => {
         <Toolbar disableGutters>
           <Avatar
             src={logo}
-            sx={{ display: { xs: "none", md: "flex" }, mr: 3 }}
+            sx={{ display: { xs: "none", md: "flex" }, mr: 3,cursor:"pointer" }}
+            onClick={()=>navigate("/")}
           />
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -105,7 +106,8 @@ const Navbar = () => {
           {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
           <Avatar
             src={logo}
-            sx={{ display: { xs: "flex", md: "none" }, mr: 3 }}
+            sx={{ display: { xs: "flex", md: "none" }, mr: 3,cursor:"pointer" }}
+            onClick={()=>navigate("/")}
           />
           <Typography
             variant="h5"

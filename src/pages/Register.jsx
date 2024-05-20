@@ -10,7 +10,8 @@ import Container from "@mui/material/Container";
 import { Form, Formik } from "formik";
 import { object, string } from "yup";
 import useAuthApis from "../hooks/useAuthApis";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Register = () => {
   const registerSchema = object({
@@ -31,8 +32,9 @@ const Register = () => {
   });
 
   const { registerApi } = useAuthApis();
-
-  return (
+  const token = useSelector(state=>state.auth.token)
+  
+  return token ? <Navigate to="/" /> : (
     <Container
       component="main"
       maxWidth="xs"

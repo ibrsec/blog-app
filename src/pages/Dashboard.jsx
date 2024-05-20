@@ -67,17 +67,17 @@ export default Dashboard;
 //*myblog after login route private content 
 //*profile after login route private content
 // * profile card resmi
-//about kismi
+//* about kismi
 //*logout olunca comments categories infolar silinecek, blogs loginsiz geliyor zaten silme
-//login ken login ve register endpointine gitmeyi engelleme
+//* login ken login ve register endpointine gitmeyi engelleme
 
 // * dashboardda ki bloglar isPublesh true ise gozukecek  - zaten boyleymis
 // * false olanlar sadece myblogda gozukmeli
+
+//*logo ya tiklayinca bisey acilsin biyere gitsin vs
+
+
 //blog postlara user koyup tiklayinca user infosuna gitme  ?????
-
-//logo ya tiklayinca bisey acilsin biyere gitsin vs
-
-
 
 // kakaolu fistikli  veya cikolatali
 // goze guzel gelen herkese yetecek ama cok fazla olmayan

@@ -25,9 +25,9 @@ const Login = () => {
   })
 
   const {loginApi} = useAuthApis();
-
+const token = useSelector(state=>state.auth.token)
   
-  return  (
+  return token ? <Navigate to="/" /> : (
     <Container
       component="main"
       maxWidth="xs"
@@ -83,7 +83,7 @@ const Login = () => {
                   required
                   fullWidth
                   id="email"
-                  label="Email Address"
+                  label="Email Address - for fill -> doubleClick and leave"
                   name="email"
                   autoComplete="email"
                   autoFocus
@@ -99,7 +99,7 @@ const Login = () => {
                   required
                   fullWidth
                   name="password"
-                  label="Password"
+                  label="Password - for fill -> doubleClick and leave"
                   type="password"
                   id="password"
                   autoComplete="current-password"
@@ -111,6 +111,9 @@ const Login = () => {
                   onDoubleClick={()=>{values.password = "testBA1?"}}
 
                 />
+                <Typography>
+                Email: testba@test.com <br/>Password: testBA1?
+                </Typography>
 
                 <Button
                   type="submit"

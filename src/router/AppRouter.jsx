@@ -10,6 +10,7 @@ import PrivateRouter from "./PrivateRouter";
 import NewBlog from "../pages/NewBlog";
 import BlogDetail from "../pages/BlogDetail";
 import Notfound from "../pages/Notfound";
+import About from "../pages/About";
 
 const AppRouter = () => {
   return (
@@ -34,6 +35,7 @@ const AppRouter = () => {
           <Route path="" element={<Profile />}/>
         </Route>
 
+          <Route path="/about" element={<About />}/>
           <Route path="*" element={<Notfound />}/>
 
  
