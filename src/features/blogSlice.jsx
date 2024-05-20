@@ -2,8 +2,11 @@ import { createSlice } from "@reduxjs/toolkit"
 
 
 const initialState={
-    blogs:[],
-    blogsDetails:{},
+    blogs:[], 
+    singleBlog:{},
+    singleLikeResult:{},
+    categories:[],
+    comments:[],
     loading:false,
     error:false,
 }
@@ -21,13 +24,27 @@ const blogSlice = createSlice({
             state.loading = false;
             state.error = true;
         },
-        successBlogs: (state,{payload}) => {
+        successDatasGeneric: (state,{payload}) => {
+            state.loading = false; 
+            state[payload.path] = payload.data;
+        },
+        successSinlgeBlog:(state,{payload})=>{
             state.loading = false;
-            console.log('payload =',payload?.details);
-            state.blogs = payload.data;
-            state.blogsDetails = payload?.details;
+            state.singleBlog = payload;
+        },
+        successSinlgeLike:(state,{payload})=>{
+            state.loading = false;
+            state.singleLikeResult = payload;
+        },
+        successWithoutPayload:state=>{
+            state.loading =false;
+        },
+        logoutBlogsReducer:state=>{
+            // state.blogs=[];
+            state.categories=[];
+            state.comments=[];
         }
     }
 })
-export const {fetchStartBlogs,fetchFailBlogs,successBlogs} = blogSlice.actions;
+export const {fetchStartBlogs,fetchFailBlogs,successDatasGeneric,successWithoutPayload,successSinlgeBlog, successSinlgeLike,  } = blogSlice.actions;
 export default  blogSlice.reducer;

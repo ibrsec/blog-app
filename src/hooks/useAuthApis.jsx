@@ -13,7 +13,7 @@ import { toastLoading, toastTypes, toastUpdate } from "../helper/ToastNotify";
 const useAuthApis = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { axiosPublic } = useAxios();
+  const { axiosPublic,axiosToken } = useAxios();
 
   const loginApi = async (body) => {
     dispatch(fetchStartAuth());
@@ -59,7 +59,7 @@ const useAuthApis = () => {
     dispatch(fetchStartAuth());
     const idLoading = toastLoading("Logging out..");
     try {
-      const response = await axiosPublic.get("/auth/logout");
+      const response = await axiosToken.get("/auth/logout");
       console.log(response);
       //success action
       dispatch(logoutSuccess());

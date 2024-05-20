@@ -5,13 +5,10 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import { Box, Stack } from "@mui/material";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import MessageIcon from "@mui/icons-material/Message";
-import VisibilityIcon from "@mui/icons-material/Visibility";
+import { Stack } from "@mui/material";
+
+import IconsComp from "./IconsComp";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { toastInfo } from "../../helper/ToastNotify";
 
 const BlogCard = ({
   image,
@@ -23,19 +20,9 @@ const BlogCard = ({
   countOfVisitors,
   _id,
 }) => {
-  const navigate = useNavigate();
-  const token = useSelector((state) => state.auth.token);
-
-  const likeHandle = () => {
-    if (token) {
-      console.log("like happens");
-    } else {
-      navigate("/login");
-      toastInfo("You must login first!!");
-    }
-  };
-
   
+  const navigate = useNavigate();
+
   return (
     <Card
     // sx={{ maxWidth: 345 }}
@@ -79,63 +66,14 @@ const BlogCard = ({
           width={"100%"}
           my={2}
         >
-          <Box display={"flex"} alignItems={"center"} gap={1}>
-            <Box
-              display={"flex"}
-              alignItems={"center"}
-              gap={1}
-              component="button"
-              variant="text"
-              sx={{
-                cursor: "pointer",
-                backgroundColor: "transparent",
-                borderRadius: "50%",
-                p: "5px",
-                border: "none",
-                transition: ".5s all",
-                ":hover": { backgroundColor: "rgba(1,1,1,.1)" },
-                ":active": { backgroundColor: "rgba(1,1,1,.2)" },
-              }}
-              onClick={likeHandle}
-            >
-              <FavoriteIcon /> {likes?.length}
-            </Box>
+          <IconsComp
+            likes={likes}
+            comments={comments}
+            countOfVisitors={countOfVisitors}
+            _id={_id}
+            handleCommentClick={()=>{}}
+          />
 
-            <Box
-              display={"flex"}
-              alignItems={"center"}
-              gap={1}
-              sx={{
-                cursor: "pointer",
-                backgroundColor: "transparent",
-                borderRadius: "50%",
-                p: "5px",
-                border: "none",
-                transition: ".5s all",
-                ":hover": { backgroundColor: "rgba(1,1,1,.1)" },
-                ":active": { backgroundColor: "rgba(1,1,1,.2)" },
-              }}
-            >
-              <MessageIcon /> {comments?.length}
-            </Box>
-            <Box
-              display={"flex"}
-              alignItems={"center"}
-              gap={1}
-              sx={{
-                cursor: "pointer",
-                backgroundColor: "transparent",
-                borderRadius: "50%",
-                p: "5px",
-                border: "none",
-                transition: ".5s all",
-                ":hover": { backgroundColor: "rgba(1,1,1,.1)" },
-                ":active": { backgroundColor: "rgba(1,1,1,.2)" },
-              }}
-            >
-              <VisibilityIcon /> {countOfVisitors}
-            </Box>
-          </Box>
           <Button
             variant="contained"
             onClick={() => navigate(`/detail/${_id}`)}

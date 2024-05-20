@@ -6,7 +6,8 @@ import { useSelector } from 'react-redux';
 
 const PaginationComp = ({page, setPage}) => {
 
-    const blogsDetails = useSelector((state)=> state?.blogs?.blogsDetails)
+    const blogs = useSelector((state)=> state?.blogs?.blogs)
+    const blogsDetails = blogs?.details;
 
     const totalPage = Number(Math.ceil(blogsDetails?.totalRecords / blogsDetails?.limit));
      

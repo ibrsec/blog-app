@@ -6,14 +6,14 @@ import Blogs from "../components/dashboard/Blogs";
 import { Box } from "@mui/material";
 
 const Dashboard = () => {
-  const { getBlogs } = useBlogApis();
+  const { getDatasgeneric } = useBlogApis();
   
   
 
   const [page, setPage] = useState(1);
   
   useEffect(() => {
-    getBlogs(page);
+    getDatasgeneric("blogs",20,page);
   }, [page]);
 
 
@@ -40,13 +40,44 @@ export default Dashboard;
 //*  private router
 // *loginsiz login page yonlenince => notify gosterme.
 //* redux persist
-// new blog content //*  route private
-// read more content, comments, kendi yazisi ise edit delete buttonlari //* route private
-//fav content //* route private 
-//profile after login route private content
-//myblog after login route private content
-//profile after login route private content
+//* new blog content //*  route private
+
+
+
+//? read more content, 
+//*comments, in prgres
+//*kendi yazisi ise edit delete buttonlari //* route private
+//* readmore da update e mdoal acilacak
+//* edit update ok
+//* delete 'e de eminmisin modali acilacak tabi.'
+//* delete ok
+//* knedi yazisi ise commentleri silebilirmi 
+
+//* detailste category gosterilecek
+//* publish mi draftmi detailde gozukecek
+//* kendinin blogu ise it's you yazacak
+
+
+//*fav content //* route private 
+//* profile  content //*after login route private 
+//*my blog da blog yoksa write blog yazisi ve newbloga navigate
+//*mayblogda drafts lar ustte yari olarak gosterilsin
+
+
+//*myblog after login route private content 
+//*profile after login route private content
 // * profile card resmi
 //about kismi
-//logout olunca blog infolar silinecek
+//*logout olunca comments categories infolar silinecek, blogs loginsiz geliyor zaten silme
 //login ken login ve register endpointine gitmeyi engelleme
+
+// * dashboardda ki bloglar isPublesh true ise gozukecek  - zaten boyleymis
+// * false olanlar sadece myblogda gozukmeli
+//blog postlara user koyup tiklayinca user infosuna gitme  ?????
+
+//logo ya tiklayinca bisey acilsin biyere gitsin vs
+
+
+
+// kakaolu fistikli  veya cikolatali
+// goze guzel gelen herkese yetecek ama cok fazla olmayan

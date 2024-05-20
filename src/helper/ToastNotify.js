@@ -14,7 +14,7 @@ export const toastTypes = {
 
 export const toastSuccess = (msg) => {
   toast.success(msg, {
-    position: "top-right",
+    position: "bottom-right",
     autoClose: 4000,
     hideProgressBar: false,
     closeOnClick: true,
@@ -40,7 +40,7 @@ export const toastError = (msg) => {
 };
 export const toastWarn = (msg) => {
   toast.warn(msg, {
-    position: "top-right",
+    position: "bottom-right",
     autoClose: 4000,
     hideProgressBar: false,
     closeOnClick: true,
@@ -67,7 +67,7 @@ export const toastInfo = (msg) => {
 export const toastLoading = (msg) => {
   return toast.loading("Please wait... " + msg, 
   {
-    position: "top-right", 
+    position: "bottom-right", 
     theme: "dark",
     transition: Slide,
   }
@@ -78,7 +78,7 @@ export const toastUpdate = (id, msg, type) => {
     render: msg,
     type: type,
     isLoading: false,
-    position: "top-right",
+    position: "bottom-right",
     autoClose: 4000,
     hideProgressBar: false,
     closeOnClick: true,

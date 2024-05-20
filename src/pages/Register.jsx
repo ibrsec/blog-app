@@ -14,12 +14,12 @@ import { Link } from "react-router-dom";
 
 const Register = () => {
   const registerSchema = object({
-    username: string().max(30, "Max 40 chars"),
-    firstName: string().max(30, "Max 40 chars"),
-    lastName: string().max(30, "Max 40 chars"),
+    username: string().max(30, "Max 30 chars"),
+    firstName: string().max(30, "Max 30 chars"),
+    lastName: string().max(30, "Max 30 chars"),
     email: string().email("Must be a valid email").max(40, "Max 40 chars"),
     image: string().url("Must be a valid url").max(400, "Max 400 chars"),
-    city: string().max(30, "Max 40 chars"),
+    city: string().max(30, "Max 30 chars"),
     bio: string().max(100, "Max 100 chars"),
     password: string()
       .matches(/\d+/, "At least 1 number")
