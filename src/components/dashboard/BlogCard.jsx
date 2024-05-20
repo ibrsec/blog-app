@@ -53,7 +53,7 @@ const BlogCard = ({
             WebkitBoxOrient: "vertical",
           }}
         >
-          {content.replace("<p>", "").replaceAll("</p>", "")}
+          {content?.replace("<p>", "").replaceAll("</p>", "")}
         </Typography>
       </CardContent>
       <CardActions>

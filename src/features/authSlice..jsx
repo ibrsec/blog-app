@@ -37,9 +37,9 @@ const authSlice = createSlice({
         state.auth = {};
         state.token = "";
         state.user = {};
-    }
+    },
   },
 });
 
-export const { fetchStartAuth,fetchFailAuth,succcessLoginAuth,succcessRegisterAuth,logoutSuccess } = authSlice.actions;
+export const { fetchStartAuth,fetchFailAuth,succcessLoginAuth,succcessRegisterAuth,logoutSuccess, } = authSlice.actions;
 export default authSlice.reducer;

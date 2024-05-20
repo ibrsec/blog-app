@@ -93,7 +93,7 @@ const Navbar = () => {
                   key={page}
                   onClick={() => {
                     handleCloseNavMenu();
-                    const path = page.replaceAll(" ", "").toLowerCase();
+                    const path = page?.replaceAll(" ", "").toLowerCase();
                     console.log(path);
                     path === "dashboard" ? navigate("/") : navigate(path);
                   }}
@@ -131,7 +131,7 @@ const Navbar = () => {
                 key={page}
                 onClick={() => {
                   handleCloseNavMenu();
-                  const path = page.replaceAll(" ", "").toLowerCase();
+                  const path = page?.replaceAll(" ", "").toLowerCase();
                   console.log(path);
                   path === "dashboard" ? navigate("/") : navigate(path);
                 }}
@@ -169,7 +169,7 @@ const Navbar = () => {
                   key={setting}
                   onClick={() => {
                     handleCloseUserMenu();
-                    const path = setting.replaceAll(" ","").toLowerCase();
+                    const path = setting?.replaceAll(" ","").toLowerCase();
                   console.log(path);
 
 

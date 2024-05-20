@@ -76,7 +76,12 @@ const useAuthApis = () => {
     }
   };
 
-  return { loginApi, registerApi, logoutApi };
+
+
+
+
+
+  return { loginApi, registerApi, logoutApi, };
 };
 
 export default useAuthApis;

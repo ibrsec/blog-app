@@ -28,14 +28,15 @@ const blogSlice = createSlice({
             state.loading = false; 
             state[payload.path] = payload.data;
         },
-        successSinlgeBlog:(state,{payload})=>{
+        successSingleBlog:(state,{payload})=>{
             state.loading = false;
             state.singleBlog = payload;
         },
-        successSinlgeLike:(state,{payload})=>{
+        successSingleLike:(state,{payload})=>{
             state.loading = false;
             state.singleLikeResult = payload;
         },
+        
         successWithoutPayload:state=>{
             state.loading =false;
         },
@@ -46,5 +47,5 @@ const blogSlice = createSlice({
         }
     }
 })
-export const {fetchStartBlogs,fetchFailBlogs,successDatasGeneric,successWithoutPayload,successSinlgeBlog, successSinlgeLike,  } = blogSlice.actions;
+export const {fetchStartBlogs,fetchFailBlogs,successDatasGeneric,successWithoutPayload,successSingleBlog, successSingleLike } = blogSlice.actions;
 export default  blogSlice.reducer;

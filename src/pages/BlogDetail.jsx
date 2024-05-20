@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import useBlogApis from "../hooks/useBlogApis";
 import { useSelector } from "react-redux";
 import {
@@ -16,9 +16,9 @@ import IconsComp from "../components/dashboard/IconsComp";
 import CommentComp from "../components/dashboard/CommentComp";
 import BlogEditButtons from "../components/dashboard/BlogEditButtons";
 
-const BlogDetail = () => {
+const BlogDetail = () => { 
   const { id } = useParams();
-  console.log(id);
+
   const { getSingleBlogInfo } = useBlogApis();
   const singleBlogInfo = useSelector((state) => state.blogs.singleBlog);
   const currentUser = useSelector((state) => state.auth.user);
@@ -62,7 +62,7 @@ const BlogDetail = () => {
             gap={4} 
 
           >
-            <Box display={"flex"} alignItems={"center"} gap={2}  >
+            <Box display={"flex"} alignItems={"center"} gap={2} >
               <Avatar
                 sx={{ color: "blueviolet", backgroundColor: "skyblue" }}
               />
@@ -109,9 +109,7 @@ const BlogDetail = () => {
 
 
               <Typography textAlign={"justify"}>
-                {singleBlogInfo?.content
-                  .replaceAll("<p>", "")
-                  .replaceAll("</p>", "")}
+                {singleBlogInfo?.content?.replaceAll("<p>", "").replaceAll("</p>", "")}
               </Typography>
             </Box>
             <Box >

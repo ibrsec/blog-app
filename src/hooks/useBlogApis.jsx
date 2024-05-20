@@ -7,8 +7,8 @@ import {
   fetchStartBlogs,
   successDatasGeneric,
   successWithoutPayload,
-  successSinlgeBlog,
-  successSinlgeLike,
+  successSingleBlog,
+  successSingleLike,
 } from "../features/blogSlice";
 import { toastLoading, toastTypes, toastUpdate } from "../helper/ToastNotify";
 
@@ -69,7 +69,7 @@ const useBlogApis = () => {
       const response = await axiosToken(`/blogs/${blogId}`);
       console.log(`Get single blog info =`, response);
       const data = response?.data?.data;
-      dispatch(successSinlgeBlog(data));
+      dispatch(successSingleBlog(data));
       toastUpdate(
         idLoading,
         "Single blog info - SuccessFully Loaded",
@@ -155,7 +155,7 @@ const useBlogApis = () => {
     try {
       const response = await axiosToken.post(`/blogs/${id}/postLike`);
       console.log(`Like blog - `, response);
-      dispatch(successSinlgeLike({id:id,data:response?.data}));
+      dispatch(successSingleLike({id:id,data:response?.data}));
       toastUpdate(idLoading, " - SuccessFully liked", toastTypes.success);
 
      
@@ -173,6 +173,7 @@ const useBlogApis = () => {
     deleteDatageneric,
     editBlogApi,
     postLikeApi,
+
   };
 };
 
