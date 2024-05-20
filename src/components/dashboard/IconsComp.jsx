@@ -31,10 +31,7 @@ const IconsComp = ({
       setCountOfLikes(singleLikeResult?.data?.countOfLikes);
   }, [singleLikeResult]);
 
-  singleLikeResult?.id === _id &&
-    console.log("singleLikeResult", singleLikeResult);
-  singleLikeResult?.id === _id && console.log("didUserLike  = ", didUserLike);
-
+  
   const likeHandle = () => {
     if (token) {
       console.log("like happens");

@@ -76,7 +76,7 @@ const NewBlog = () => {
             postNewDatageneric("blogs",values);
 
             //?resetform
-            // actions.resetForm();
+            actions.resetForm();
             actions.setSubmitting(false);
           }}
         >

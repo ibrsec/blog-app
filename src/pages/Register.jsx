@@ -75,7 +75,7 @@ const Register = () => {
             registerApi(values);
 
             //?resetform
-            // actions.resetForm();
+            actions.resetForm();
             actions.setSubmitting(false);
           }}
         >

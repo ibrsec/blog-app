@@ -19,7 +19,7 @@ const About = () => {
       />
       <Typography variant={"h4"} fontWeight={"500"}>ibrsec</Typography>
       <Typography variant={"p"} fontWeight={"400"} fontSize={40}>Blog APP</Typography>
-      <Box className="social-icons" display="flex" alignItems="center" justtifyContent="center" gap={1} >
+      <Box className="social-icons" display="flex" alignItems="center" justifyContent="center" gap={1} >
    <Link href="https://github.com/ibrsec" target={"_blank"}> <GitHubIcon /></Link>
     <Link href="https://www.linkedin.com/in/ibr-seckin/" target={"_blank"}> <LinkedInIcon /></Link>
     <Link href="#"> <XIcon /></Link>

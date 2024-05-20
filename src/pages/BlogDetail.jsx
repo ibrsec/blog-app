@@ -22,10 +22,7 @@ const BlogDetail = () => {
   const { getSingleBlogInfo } = useBlogApis();
   const singleBlogInfo = useSelector((state) => state.blogs.singleBlog);
   const currentUser = useSelector((state) => state.auth.user);
-  console.log('currentUser', currentUser?._id)
-  console.log('blogsAuthor', singleBlogInfo?.userId?._id)
-
-
+ 
 
   console.log("singleBlogInfo", singleBlogInfo);
   useEffect(() => {

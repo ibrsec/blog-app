@@ -67,7 +67,7 @@ const token = useSelector(state=>state.auth.token)
             loginApi(values);
 
             //?resetform
-            // actions.resetForm();
+            actions.resetForm();
             actions.setSubmitting(false);
         }}
         

@@ -18,8 +18,7 @@ const CommentComp = () => {
   const { postNewDatageneric, getSingleBlogInfo } = useBlogApis();
 
   const handleCommentSubmit = (e) => {
-    e.preventDefault();
-    console.log("commentInput", commentInput);
+    e.preventDefault(); 
     setCommentInput("");
     const commentBody = {
       blogId: singleBlogInfo?._id,

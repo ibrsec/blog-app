@@ -13,7 +13,7 @@ const Dashboard = () => {
   const [page, setPage] = useState(1);
   
   useEffect(() => {
-    getDatasgeneric("blogs",20,page);
+    getDatasgeneric("blogs",10,page);
   }, [page]);
 
 
@@ -77,7 +77,5 @@ export default Dashboard;
 //*logo ya tiklayinca bisey acilsin biyere gitsin vs
 
 
-//blog postlara user koyup tiklayinca user infosuna gitme  ?????
-
-// kakaolu fistikli  veya cikolatali
-// goze guzel gelen herkese yetecek ama cok fazla olmayan
+ 
+ 
