@@ -1,17 +1,13 @@
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import {   useParams } from "react-router-dom";
 import useBlogApis from "../hooks/useBlogApis";
 import { useSelector } from "react-redux";
-import {
-  Avatar,
-  Badge,
-  Box,
-  Button,
-  CardMedia,
-  Container,
-  Stack,
-  Typography,
-} from "@mui/material";
+import Avatar from "@mui/material/Avatar";
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container"; 
+import Typography from "@mui/material/Typography";  
+import Stack from "@mui/material/Stack"; 
+import CardMedia from "@mui/material/CardMedia";  
 import IconsComp from "../components/dashboard/IconsComp";
 import CommentComp from "../components/dashboard/CommentComp";
 import BlogEditButtons from "../components/dashboard/BlogEditButtons";
@@ -26,7 +22,7 @@ const BlogDetail = () => {
 
   console.log("singleBlogInfo", singleBlogInfo);
   useEffect(() => {
-    getSingleBlogInfo(id);
+    getSingleBlogInfo(id);// eslint-disable-next-line
   }, []);
 
   const [openComments, setOpenComments] = useState(false);

@@ -1,7 +1,11 @@
 import { useEffect } from "react";
 import useBlogApis from "../hooks/useBlogApis";
-import { useSelector } from "react-redux";
-import { Box, Button, Container, Grid, Typography } from "@mui/material";
+import { useSelector } from "react-redux";  
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import Button from "@mui/material/Button"; 
+import Typography from "@mui/material/Typography";  
+import Grid from "@mui/material/Grid";   
 import BlogCard from "../components/dashboard/BlogCard";
 import { useNavigate } from "react-router-dom";
 
@@ -10,7 +14,7 @@ const MyBlog = () => {
   const currentUser = useSelector((state) => state.auth.user);
   const navigate = useNavigate();
   useEffect(() => {
-    getUsersBlogs(currentUser?._id);
+    getUsersBlogs(currentUser?._id);//eslint-disable-next-line
   }, []);
 
   const blogs = useSelector((state) => state.blogs.blogs);

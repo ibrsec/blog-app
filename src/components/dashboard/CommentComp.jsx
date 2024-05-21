@@ -1,11 +1,10 @@
-import {
-  Avatar,
-  Box,
-  Button,
-  TextField,
-  Typography,
-} from "@mui/material";
-import React, { useState } from "react";
+ 
+import Avatar from "@mui/material/Avatar";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
+import Typography from "@mui/material/Typography"; 
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import useBlogApis from "../../hooks/useBlogApis";
 import DeleteCommentComp from "./DeleteCommentComp";
@@ -15,7 +14,7 @@ const CommentComp = () => {
   const currentUser = useSelector(state=>state.auth.user);
   const singleBlogInfo = useSelector((state) => state.blogs.singleBlog);
   const [commentInput, setCommentInput] = useState("");
-  const { postNewDatageneric, getSingleBlogInfo } = useBlogApis();
+  const { postNewDatageneric  } = useBlogApis();
 
   const handleCommentSubmit = (e) => {
     e.preventDefault(); 

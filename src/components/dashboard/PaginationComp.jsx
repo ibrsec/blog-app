@@ -1,6 +1,8 @@
-import { Box } from '@mui/material'
-import { Pagination } from "@mui/material";
-import { useState } from 'react';
+ 
+import Pagination from "@mui/material/Pagination"; 
+import Box from "@mui/material/Box"; 
+
+ 
 import { useSelector } from 'react-redux';
 
 

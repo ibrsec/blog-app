@@ -1,5 +1,13 @@
 
-import { Box, CardMedia, Container } from '@mui/material';
+ 
+
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import CardMedia from "@mui/material/CardMedia";
+
+
+
+
 import png404 from '../assets/404.png';
 const Notfound = () => {
   return (

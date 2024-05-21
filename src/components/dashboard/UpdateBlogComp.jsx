@@ -6,16 +6,14 @@ import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
 import { Form, Formik } from "formik";
 import { object, string } from "yup"; 
-import { useEffect } from "react"; 
-import {
-  FormControl,
-  InputLabel,
-  MenuItem,
-  Select, 
-} from "@mui/material";
+import { useEffect } from "react";    
+import FormControl from "@mui/material/FormControl";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import Select from "@mui/material/Select";
+
 import { useSelector } from "react-redux";
 import useBlogApis from "../../hooks/useBlogApis";
-
 
 
 
@@ -24,17 +22,17 @@ const UpdateBlogComp = ({setOpen}) => {
     const singleBlogInfo = useSelector(state=> state.blogs.singleBlog)
 
     const updateBlogSchema = object({
-        title: string().max(30, "Max 30 chars"),
-        image: string().url("Must be a valid url").max(400, "Max 400 chars"),
+        title: string().max(70, "Max 70 chars"),
+        image: string().url("Must be a valid url").max(1000, "Max 1000 chars"),
         categoryId: "",
         isPublish: "",
-        content: string().max(2000, "Max 2000 chars"),
+        content: string().max(10000, "Max 10000 chars"),
       });
       const { getDatasgeneric, editBlogApi } = useBlogApis();
       const { data } = useSelector((state) => state.blogs.categories);
       console.log("categories =", data);
       useEffect(() => {
-        getDatasgeneric("categories", 30, 1);
+        getDatasgeneric("categories", 30, 1);// eslint-disable-next-line
       }, []);
   return (
     <Formik

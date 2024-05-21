@@ -1,42 +1,39 @@
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
-import TextField from "@mui/material/TextField";
-import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import TextField from "@mui/material/TextField"; 
+import Box from "@mui/material/Box"; 
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { Form, Formik } from "formik";
-import { object, string } from "yup";
-import useAuthApis from "../hooks/useAuthApis";
-import { Link } from "react-router-dom";
+import { object, string } from "yup"; 
 import { useEffect } from "react";
 import MapsUgcIcon from "@mui/icons-material/MapsUgc";
-import useBlogApis from "../hooks/useBlogApis";
-import {
-  FormControl,
-  InputLabel,
-  MenuItem,
-  Select,
-  TextareaAutosize,
-} from "@mui/material";
+import useBlogApis from "../hooks/useBlogApis"; 
 import { useSelector } from "react-redux";
+
+import FormControl from "@mui/material/FormControl";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import Select from "@mui/material/Select";
+
+ 
+
 
 const NewBlog = () => {
   const newBlogSchema = object({
-    title: string().max(30, "Max 30 chars"),
-    image: string().url("Must be a valid url").max(400, "Max 400 chars"),
+    title: string().max(70, "Max 70 chars"),
+    image: string().url("Must be a valid url").max(1000, "Max 1000 chars"),
     categoryId: "",
     isPublish: "",
-    content: string().max(2000, "Max 2000 chars"),
+    content: string().max(10000, "Max 10000 chars"),
   });
   const { getDatasgeneric, postNewDatageneric } = useBlogApis();
   const { data } = useSelector((state) => state.blogs.categories);
   console.log("categories =", data);
   useEffect(() => {
-    getDatasgeneric("categories", 30, 1);
-  }, []);
+    getDatasgeneric("categories", 30, 1); // eslint-disable-next-line
+  }, []); 
 
   return (
     <Container

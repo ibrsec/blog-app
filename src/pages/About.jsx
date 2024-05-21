@@ -1,4 +1,17 @@
-import { Box, CardMedia, Container, Link, Typography } from "@mui/material"
+ 
+
+ 
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container"; 
+import Typography from "@mui/material/Typography"; 
+import Link from "@mui/material/Link"; 
+import CardMedia from "@mui/material/CardMedia"; 
+
+
+
+
+
+
 import logo from '../assets/bloglogo.png';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import FacebookIcon from '@mui/icons-material/Facebook';

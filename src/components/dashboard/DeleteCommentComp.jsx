@@ -1,6 +1,8 @@
-import { Box, Button, Typography } from "@mui/material"
+ 
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button"; 
+import Typography from "@mui/material/Typography"; 
 import useBlogApis from "../../hooks/useBlogApis"
-import { useSelector } from "react-redux";
 import { toastInfo } from "../../helper/ToastNotify";
 
 const DeleteCommentComp = ({setOpen,commentId}) => {

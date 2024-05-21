@@ -141,3 +141,7 @@ const token = useSelector(state=>state.auth.token)
   );
 };
 export default Login;
+
+
+// email: admin@site.com
+// pass: Clarusway*123

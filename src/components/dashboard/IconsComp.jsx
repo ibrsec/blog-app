@@ -28,7 +28,7 @@ const IconsComp = ({
     singleLikeResult?.id === _id &&
       setDidUserLike(singleLikeResult?.data?.didUserLike);
     singleLikeResult?.id === _id &&
-      setCountOfLikes(singleLikeResult?.data?.countOfLikes);
+      setCountOfLikes(singleLikeResult?.data?.countOfLikes);// eslint-disable-next-line
   }, [singleLikeResult]);
 
   

@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
-import useBlogApis from "../hooks/useBlogApis";
-import { useSelector } from "react-redux";
+import useBlogApis from "../hooks/useBlogApis"; 
 import PaginationComp from "../components/dashboard/PaginationComp";
 import Blogs from "../components/dashboard/Blogs";
-import { Box } from "@mui/material";
+import  Box  from "@mui/material/Box";
 
 const Dashboard = () => {
   const { getDatasgeneric } = useBlogApis();
@@ -13,7 +12,7 @@ const Dashboard = () => {
   const [page, setPage] = useState(1);
   
   useEffect(() => {
-    getDatasgeneric("blogs",10,page);
+    getDatasgeneric("blogs",10,page);// eslint-disable-next-line
   }, [page]);
 
 
